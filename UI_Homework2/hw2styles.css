@@ -1,0 +1,21 @@
+  .navigation span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: rgb(80, 80, 80);
+    margin-right: 10px;
+  }
+  
+  span.active {
+    background-color: rgb(255, 0, 0);
+  }
+  #imageHolder {
+    width: 1024px;
+    height: 768px;
+    object-fit: cover;
+  }
+  
+  .imageContainer {
+    text-align: center;
+  }
+
