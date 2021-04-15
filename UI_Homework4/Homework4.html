@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8"/>
+    <title>Homework 4 UI</title>
+    <style>
+      .heading {
+        text-align: center;
+      }
+      .text {
+        padding-top: 110px;
+        padding-bottom: 100px;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+      }
+      .result {
+        justify-content: center;
+        text-align: center;
+        font-size: 24px;
+      }
+    </style>
+  </head> 
+  <body>
+    <h1 class="heading">Домашна работа №4</h1>
+        <h2 class="heading">Регистриране на нов автомобил в КАТ</h2>
+    <form class = "text" id = "frm">
+      Марка: <input type = "text" id = "carBrand" required = "required"/>
+      <br/><br/>
+      Модел: <input type = "text" id = "carModel" required = "required"/>
+      <br/><br/>
+      Гориво:<br/>
+      Бензин <input type = "radio" id = "engineType" required = "required"/>
+      <br/>
+      Дизел <input type = "radio" id = "engineType" required = "required"/>
+      <br/><br/>
+      Цвят:<select id="color"  required = "required">
+        <option value="" selected="true" disabled="disabled">Изберете цвят</option>
+        <option value="бял">бял</option>
+        <option value="червен">червен</option>
+        <option value="черен">черен</option>
+        <option value="син">син</option>
+        <option value="оранжев">оранжев</option>
+        <option value="жълт">жълт</option>
+        <option value="розов">розов</option>
+        <option value="бежов">бежов</option>
+        <option value="лилав">лилав</option>
+        <option value="сив">сив</option>
+        <option value="сребрист">сребрист</option>
+        <option value="кафяв">кафяв</option>
+        <option value="кафяв">зелен</option>
+    </select>
+      <br/><br/>
+            Евро стандарт:<select id="category"  required = "required">
+              <option value="" selected="true" disabled="disabled">Изберете евро стандарт</option>
+              <option value="Euro 6">Euro 6</option>
+              <option value="Euro 5">Euro 5</option>
+              <option value="Euro 4">Euro 4</option>
+              <option value="Euro 3">Euro 3</option>
+              <option value="Euro 2">Euro 2</option>
+              <option value="Euro 1">Euro 1</option>
+              </select>
+              <br/><br/>
+            <input id="btn1" type="button" value="Създай нова регистрация" onclick="getDataAndShow()" />
+          </form>
+
+          <p class = "result" id="result"></p>
+          
+          <script>
+            var carBrand, carModel, engineType, color, category;
+
+function getDataAndShow() {
+    var form = document.getElementById("frm");
+    carBrand = form.elements[0].value;
+    carModel = form.elements[1].value;
+    engineType = form.elements[2].checked ? "Бензин" : "Дизел";
+    color = document.getElementById("color");
+    var selectedColor = color.options[color.selectedIndex].value;
+    category = form.elements[5].value;
+
+    showData(new Car(carBrand, carModel, engineType, selectedColor, category));
+}
+
+
+function Car(carBrand, carModel, engineType, color, category) {
+    this.cBrand = carBrand;
+    this.cModel = carModel;
+    this.engType = engineType;
+    this.color = color;
+    this.category = category;
+}
+
+function showData(car) {
+    var item;
+    var text = "Регистриран е нов автомобил: ";
+
+    for (item in car) {
+        text = text + car[item] + " ";
+    }
+
+    document.getElementById("result").innerHTML = text;
+}
+          </script>
+  </body>
+</html>
