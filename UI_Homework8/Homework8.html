@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Homework 8 UI</title>
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <h1>Домашна работа №8</h1>
+      </header>
+      <p class = "please">
+        Моля, попълнете всички полета!
+      </p>
+      <div class = "container">
+        <form id = "userForm">
+          <label for="name">Име и фамилия:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required = "required"
+            minlength="4"
+            maxlength="50"
+            pattern="[A-Za-zА-Яа-я ]*"/>
+            <br>
+
+          <label for="address">Адрес</label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            required = "required"
+            minlength="10"
+            maxlength="50"/>
+            <br>
+
+          <label for="postal">Пощенски код</label>
+          <input
+            type="text"
+            name="postal"
+            id="postal"
+            required = "required"
+            pattern="[0-9]{4}"/>
+            <br>
+            
+
+          <label for="country">Държава</label>
+          <select name="country" id="country" required>
+            <option value="България">България</option>
+            <option value="Гърция">Гърция</option>
+            <option value="Румъния">Румъния</option>
+            <option value="Северна Македония">Северна Македония</option>
+            <option value="Сърбия">Сърбия</option>
+            <option value="Турция">Турция</option>
+          </select>
+          <br>
+
+          <label for="username">Потребителско име</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            required = "required"
+            pattern="[A-Za-zА-Яа-я0-9!@#$%^&*;:~.,\-\_\+]*"/>
+            <br>
+
+          <label for="email">Имейл</label>
+          <input type="email" name="email" id="email" 
+          required = "required" 
+          pattern="(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"/>
+          <br>
+          
+          <button type = "submit" id = "submitBtn">Регистрация!</button>
+        </form>
+        </div>
+        <div id = "info" class = "info"></div>
+      </div>
+      <script src="scripts.js"></script>
+    </body>
+</html>

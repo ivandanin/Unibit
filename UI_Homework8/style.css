@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(225, 238, 255);
+}
+.layout {
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    
+    padding-top: 50px;
+    padding-bottom: 3px;
+    margin: 5px;
+    font-size: 20px;
+
+}
+
+.please,
+.info {
+    font-size: 16px;
+}
