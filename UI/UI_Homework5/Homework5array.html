@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8" />
+<title>Homework 5, Array UI</title>
+</head>
+
+<body>
+<h1>Домашна работа №5 array</h1>
+
+<p>Click the button to add a new car to the array of cars.</p>
+
+<button onclick = "addCar()">Add a new car</button> 
+
+<script>
+    var cars = [];
+    
+    function addCar() {
+        var newCars = ["Lamborghini", "Mercedes-Benz", "Nissan", "Mazda", "Opel", "Ferrari", "Citroen", "Dacia", "Audi", "Chevrolet", "Acura", "Rolce-Royce", "Aston Martin",
+         "Bentley", "Renault", "Alfa Romeo", "BMW", "Toyota", "Volkswagen", "Tesla", "Porsche", "Honda", "Maserati", "Jeep", "Subaru", "Jaguar", "Hunday", "Mazda", "Dogde"];
+         var rand = newCars[Math.floor(Math.random()*newCars.length)];
+         cars.push(rand);
+         document.getElementById("first").innerHTML = cars;
+         
+        }
+    </script>
+
+<hr>
+
+<p>Click the button to remove a car.</p>
+
+<button onclick = "removeCar()">Remove a car</button>
+<script>
+    
+    function removeCar() {
+        cars.pop();
+        document.getElementById("first").innerHTML = cars;
+    }
+</script>
+
+<hr>
+
+<p>Click the button to sort the cars in alphabetical order.</p>
+
+<button onclick= "sort()">Sort the cars</button>
+<script>
+
+function sort() {
+    cars.sort();
+    document.getElementById("first").innerHTML = cars;
+}
+</script>
+<hr>
+
+    <p id = "first"></p>
+</body>
+</html>

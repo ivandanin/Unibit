@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<meta charset = "utf-8" />
+<title>Homework 5, String UI</title>
+</head>
+
+<body>
+
+<h1>Домашна работа №5 string</h1>
+
+<p>Click the button to split the sentence : "My car is white", by ",".</p>
+
+<button onclick="split()">Split the paragraph</button>
+
+<p id = "first"></p>
+
+<script>
+    function split() {
+        var str1 = "My car is white"
+  var res = str1.split(" ");
+  document.getElementById("first").innerHTML = res;
+    }
+</script>
+
+<hr>
+
+<p>Click the button to change the car color.</p>
+
+<p id = "second">My hair is blonde</p>
+<button onclick= "replace()">Replace the color</button>
+
+<script> 
+function replace() {
+    var str2 = document.getElementById("second").innerHTML;
+    var res = str2.replace("blonde", "brown");
+    document.getElementById("second").innerHTML = res;
+}
+</script>
+
+<hr>
+
+<p>Click the button to make the sentence uppercase.</p>
+<button onclick= "toUppercase()">To Upperase</button>
+<p id = "third"></p>
+<script>
+function toUppercase() {
+    var str3 = "The quick brown fox jumps over the lazy dog";
+    var res = str3.toUpperCase();
+    document.getElementById("third").innerHTML = res;
+    }
+</script>
+
+</body>
+</html>
